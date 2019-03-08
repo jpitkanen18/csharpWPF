@@ -3,10 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:windowsApp"
+        xmlns:SystemGesture="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" Icon="./rsrc/favicon.ico" MouseMove="Window_MouseMove">
+    <Window.Resources>
+        <SystemGesture:String x:Key="strHello">C# Test App</SystemGesture:String>
+        <SystemGesture:String x:Key="strEmail">Placeholder</SystemGesture:String>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="1"/>
+        </Style>
+    </Window.Resources>
+    <Canvas Background="PaleTurquoise">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="NoWrap"
+                   Text="Login to C# Test" VerticalAlignment="Top" FontSize="40" Canvas.Left="21" Canvas.Top="10"/>
+        <TextBlock HorizontalAlignment="Center" Text="{StaticResource strHello}"
+                   FontSize="40" VerticalAlignment="Top" Canvas.Left="25" Canvas.Top="336"/>
+        <Button x:Name="firstButton" Height="40" Width="150" Click="FirstButtonClick" Content="Close Window" Canvas.Left="466" Margin="0" Canvas.Top="96"/>
+        <Button x:Name="secondButton" Height="40" Width="150" Click="SecondButtonClick" Content="Open file" Canvas.Left="466" Margin="0" Canvas.Top="185"/>
+        <Button x:Name="thirdButton" Height="40" Width="150" Click="ThirdButtonClick" Content="Save As.." Canvas.Left="466" Margin="0" Canvas.Top="277"/>
+        <Button Content="Login" Canvas.Left="91" Margin="0" Canvas.Top="194" Width="75" Click="LoginClick"/>
+        <TextBlock Canvas.Left="58" TextWrapping="Wrap" Text="No account? register here!" Canvas.Top="264"/>
+        <Button Content="Sign up" Canvas.Left="91" Margin="0" Canvas.Top="300" Width="75" Click="SignupClick"/>
+        <xctk:WatermarkTextBox Watermark="Email" x:Name="emailBox" Canvas.Left="25" Canvas.Top="96" Height="23" Width="205" />
+        <xctk:WatermarkPasswordBox x:Name="passwordBox" Watermark="Password" Canvas.Left="25" Canvas.Top="136" Height="23" Width="205" />
+        <TextBlock Text="{StaticResource strEmail}" Canvas.Left="25" Canvas.Top="243" Width="211" x:Name="PlaceHolderMemme" TextAlignment="Center"/>
+    </Canvas>
 </Window>

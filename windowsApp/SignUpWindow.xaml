@@ -1,0 +1,24 @@
+﻿<Window x:Class="windowsApp.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:windowsApp"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Canvas Background="PaleVioletRed">
+
+        <xctk:WatermarkTextBox Watermark="First name" x:Name="firstName" Canvas.Left="25" Canvas.Top="126" Height="23" Width="115" />
+        <xctk:WatermarkTextBox Watermark="Last name" x:Name="lastName" Canvas.Left="145" Canvas.Top="126" Height="23" Width="111" />
+        <xctk:WatermarkTextBox Watermark="Email" x:Name="emailAddress" Canvas.Left="25" Canvas.Top="154" Height="23" Width="231" LostKeyboardFocus="EmailAddress_LostKeyboardFocus"/>
+        <xctk:WatermarkPasswordBox x:Name="passwordFirst" Watermark="Password" Canvas.Left="25" Canvas.Top="182" Height="23" Width="231" />
+        <xctk:WatermarkPasswordBox x:Name="passwordSecond" Watermark="Password again" Canvas.Left="25" Canvas.Top="210" Height="23" Width="231" LostKeyboardFocus="PasswordSecond_LostKeyboardFocus"/>
+        <Button x:Name="buttonSignUp" Content="SignUp" Canvas.Left="98" Canvas.Top="312" Width="75" Click="SignUpButton"/>
+        <CheckBox x:Name="EULABox" Content="I accept the EULA terms and conditions " Canvas.Left="25" Canvas.Top="276" Click="CheckBox_Click"/>
+        <TextBlock Canvas.Left="68" TextWrapping="Wrap" Text="Sign up!" Canvas.Top="43" FontSize="40"/>
+        <TextBlock x:Name="StopIt" Canvas.Left="35" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="366" Width="209" Visibility="Hidden"/>
+        <TextBlock x:Name="invalidEmail" Canvas.Left="274" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="154" Width="130" Visibility="Visible"/>
+
+    </Canvas>
+</Window>
